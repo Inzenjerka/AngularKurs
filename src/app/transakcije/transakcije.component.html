@@ -1,0 +1,22 @@
+<div class='container'>
+<button (click)="FiltriraneTransakcije(kategorija)" class="btn btn-outline-info" *ngFor='let kategorija of vrsteTransakcija'>{{kategorija}}</button>
+<button (click)="resetFilter()" class="btn btn-primary">Reset filter</button>
+<p class='h3'>Ukupna vrijednost transakcija: {{ukupno|currency: '':''}} KM</p>
+<table class="table table-striped">
+<thead>
+    <th>Datum</th>
+    <th>Detalji transakcije</th>
+    <th>Kategorija</th>
+    <th>Iznos</th>
+</thead>
+<tbody>
+<tr *ngFor="let transakcija of filtriraneTransakcije">
+    <td>{{transakcija.datum | date:'dd.MM.yyyy HH:mm' }}</td>
+    <td>{{transakcija.detaljiTransakcije}}</td>
+    <td>{{transakcija.kategorija}}</td>
+    <td>{{transakcija.iznos | currency:'':''}}</td>
+</tr>
+</tbody>
+</table>
+<button mat-raised-button (click)="NovaTransakcija()">Nova transakcija</button>
+</div>

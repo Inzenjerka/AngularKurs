@@ -1,0 +1,22 @@
+<div class="container">
+    <input type="text" [(ngModel)]="terminZaPretragu"/>
+    <button class="btn btn-primary" (click)="Pretrazi()">Pretrazi</button>
+<table class="table table-striped">
+    <thead>
+        <th>Ime</th>
+        <th>Broj stanovnika</th>
+        <th>Glavni grad</th>
+        <th>Jezici</th>
+        <th>Zastava</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let drzava of sveDrzave">
+            <td>{{drzava.name}}</td>
+            <td>{{drzava.population | number}}</td>
+            <td>{{drzava.capital}}</td>
+            <td><p *ngFor="let jezik of drzava.languages">{{jezik.name}} {{jezik.nativeName}}</p></td>
+            <td><img height="50px" width="70px" src="{{drzava.flag}}"/></td>
+        </tr>
+    </tbody>
+</table>
+</div>

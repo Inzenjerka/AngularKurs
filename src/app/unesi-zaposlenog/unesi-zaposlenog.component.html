@@ -1,0 +1,14 @@
+<div class='container'>
+  <form [formGroup]='zaposlenik' (ngSubmit)='onSubmit(zaposlenik)'>
+    <mat-form-field>
+      <input matInput placeholder='Unesite ime' type='text' formControlName='ime'/>
+    </mat-form-field>
+    <mat-form-field>
+    <input matInput placeholder='Unesite starost' type='number' formControlName='starost'/>
+    </mat-form-field>
+    <mat-form-field>
+    <input matInput placeholder='Unesite radno mjesto' type='text' formControlName='radnoMjesto'/>
+    </mat-form-field>
+    <button mat-raised-button type="submit" [disabled]="zaposlenik.invalid">Snimi podatke</button>
+  </form>
+</div>>
